@@ -40,7 +40,10 @@ public class OffersController {
 
 	@GetMapping("/offer/{id}")
 	public Offers readActiveOfferById(@PathVariable Integer id) {
-		return offersService.findById(id).get();
+		if(!offersService.findById(id).get().isExpired())
+			return offersService.findById(id).get();
+		else 
+			throw new ValidationException("The offer you are looking for is expired");
 	}
 
 	@GetMapping("/wrong_url")
