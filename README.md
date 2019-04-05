@@ -44,6 +44,7 @@ IMPLEMENTATION:
 TESTING:
 ********
 The DB should be empty in order to start the tests.
+REST API endpoint: http://localhost:8080/offer
 Use the following JSON for the POST request:
 
 	{
