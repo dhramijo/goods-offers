@@ -1,4 +1,4 @@
-package com.worldpay.goodsoffer;
+package co.uk.jdreamer;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import com.worldpay.goodsoffer.model.Offers;
+import co.uk.jdreamer.model.Offers;
 
 public class SystemTests {
 
@@ -19,8 +19,8 @@ public class SystemTests {
 	  
     RestTemplate restTemplate = new RestTemplate();
 
-    String url = "http://localhost:8080/offer";
-    Offers offer = new Offers(1,"Sky", "TV Offer", 39.99, "Eur", new Date(), 50, false);
+    String url = "http://localhost:8080/api/v1/offer";
+    Offers offer = new Offers("Sky", "TV Offer", 39.99, "Eur", new Date(), 50, false);
     ResponseEntity<Offers> entity = restTemplate.postForEntity(url, offer, Offers.class);
 
     Offers[] offers = restTemplate.getForObject(url, Offers[].class);

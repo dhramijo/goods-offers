@@ -1,4 +1,4 @@
-package com.worldpay.goodsoffer.services;
+package co.uk.jdreamer.services;
 
 import java.util.Date;
 
@@ -10,8 +10,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.worldpay.goodsoffer.model.Offers;
-import com.worldpay.goodsoffer.service.OffersService;
+import co.uk.jdreamer.model.Offers;
+import co.uk.jdreamer.service.OffersService;
 
 @RunWith(SpringRunner.class)
 
@@ -24,7 +24,7 @@ public class ServiceTests {
 
   @Test
   public void testCreateReadDelete() {
-	Offers offer = new Offers(1,"Sky", "TV Offer", 39.99, "Eur", new Date(), 50, false);
+	Offers offer = new Offers("Sky", "TV Offer", 39.99, "Eur", new Date(), 50, false);
 
 	offersService.save(offer);
 
