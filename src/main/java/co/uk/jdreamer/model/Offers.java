@@ -1,4 +1,4 @@
-package com.worldpay.goodsoffer.model;
+package co.uk.jdreamer.model;
 
 import java.util.Date;
 
@@ -6,39 +6,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name="t_goodsoffer")
 public class Offers {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@NotNull
-	@NotEmpty
-	private String name;
-	@NotNull
-	@NotEmpty
-	private String description;
-	@NotNull
-	private double price;
-	@NotNull
-	@NotEmpty
 	private String currency;
-	@NotNull
-	private Date startDate;
-	@NotNull
-	private int offerDaysDuration;
-	@NotNull
+	private String description;
 	private boolean expired;
+	private String name;
+	private int offerDaysDuration;
+	private double price;
+	private Date startDate;
 
 	public Offers() {
 
 	}
 
-	public Offers(int id, String name, String description, double price, String currency, Date startDate, int offerDaysDuration, boolean expired) {
-		this.id = id;
+	public Offers(String name, String description, double price, String currency, Date startDate, int offerDaysDuration, boolean expired) {
+		super();
 		this.name = name;
 		this.description = description;
 		this.price = price;
@@ -102,6 +90,13 @@ public class Offers {
 	}
 	public void setExpired(boolean expired) {
 		this.expired = expired;
+	}
+
+	@Override
+	public String toString() {
+		return "Offers [id=" + id + ", currency=" + currency + ", description=" + description + ", expired=" + expired
+				+ ", name=" + name + ", offerDaysDuration=" + offerDaysDuration + ", price=" + price + ", startDate="
+				+ startDate + "]";
 	}
 
 }

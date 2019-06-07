@@ -1,8 +1,8 @@
-package com.worldpay.goodsoffer.service;
+package co.uk.jdreamer.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.worldpay.goodsoffer.model.Offers;
+import co.uk.jdreamer.model.Offers;
 
 public interface OffersService extends JpaRepository<Offers, Integer> {
 	

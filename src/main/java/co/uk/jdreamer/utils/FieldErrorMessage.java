@@ -1,4 +1,4 @@
-package com.worldpay.goodsoffer.utils;
+package co.uk.jdreamer.utils;
 
 public class FieldErrorMessage {
 	
